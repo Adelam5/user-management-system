@@ -3,7 +3,6 @@ import User from "../models/User";
 import { asyncHandler } from "../middleware";
 import { sendResponse } from "../utils/successResponse";
 import { NotFoundError } from "../errors";
-import Permission from "../models/Permission";
 
 // @desc    List users
 // @route   GET /api/users
@@ -37,8 +36,6 @@ const read = asyncHandler(async (req, res) => {
 const create = asyncHandler(async (req, res) => {
   const user = await User.create(req.body);
 
-  user.password = undefined;
-
   sendResponse(res, {
     id: user._id,
     firstName: user.firstName,
@@ -60,27 +57,15 @@ const update = asyncHandler(async (req, res) => {
   sendResponse(res, user);
 });
 
-// @desc    Remove user with specific id
-// @route   DELETE /api/users/:id
+// @desc    Update user's permissions
+// @route   PUT /api/users/:id/permissions
 // @access  Public
 const updateUserPermissions = asyncHandler(async (req, res, next) => {
   let user = req.user;
 
-  // removing duplicates from array if there are any
-  const newPermissions = Array.from(new Set(req.body.permissions));
-
-  const permissions = await Permission.find({
-    _id: { $in: newPermissions },
-  });
-
-  // checking if all permissions exist in DB
-  if (permissions.length < newPermissions.length) {
-    return next(new NotFoundError("One or more permissions was not found"));
-  }
-
   user = await User.findByIdAndUpdate(
     req.params.id,
-    { permissions: newPermissions },
+    { permissions: req.permissions },
     {
       new: true,
       runValidators: true,

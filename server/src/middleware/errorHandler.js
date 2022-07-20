@@ -35,6 +35,7 @@ const errorHandler = (err, req, res, next) => {
     error = new BadRequestError(message);
   }
 
+  // Yup validation error
   const isYupError = err instanceof Yup.ValidationError;
   if (isYupError) {
     const message = Object.values(err.errors).join(". ");

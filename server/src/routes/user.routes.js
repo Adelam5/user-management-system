@@ -12,15 +12,16 @@ import {
   updateUserPermissions,
 } from "../controllers/user.controller";
 import { advancedResults } from "../middleware";
-import { validateUser } from "../validation/validateUser";
+import { validateUser, validateEditUser } from "../validation/validateUser";
+import { validatePermission } from "../validation/validatePermission";
 
 const router = express.Router();
 
 router.route("/").get(advancedResults(User), list).post(validateUser, create);
 
-router.route("/:id").get(read).put(update).delete(remove);
+router.route("/:id").get(read).put(validateEditUser, update).delete(remove);
 
-router.put("/:id/permissions", updateUserPermissions);
+router.put("/:id/permissions", validatePermission, updateUserPermissions);
 
 router.param("id", getById);
 

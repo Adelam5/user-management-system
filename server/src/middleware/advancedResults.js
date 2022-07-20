@@ -4,16 +4,12 @@ const advancedResults = (model) => async (req, res, next) => {
   // Copy req.query
   const reqQuery = { ...req.query };
 
-  console.log(reqQuery);
-
   // Delete sort and page fields from reqQuery
   delete reqQuery["sort"];
   delete reqQuery["page"];
 
   // Create query string
   let queryStr = JSON.stringify(reqQuery);
-
-  console.log(req.query.sort, reqQuery, queryStr);
 
   // Finding resource
   query = model.find(JSON.parse(queryStr));
