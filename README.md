@@ -1,5 +1,7 @@
 # User Management System
 
+<img src="https://i.ibb.co/NnNQYTd/Screenshot-1.png" />
+
 ### Project Description
 
 User Management System is a full MERN stack web application. The main goal is to display the list of all users from the database. It allows us to filter and order users, add new users, and edit and delete existing ones. We can filter users by using form on the User List page and we can order users (descending or ascending) by clickng on the arrows by the field names in the head of the table. Every user must have: first name, last name, username, email, status and password. Password field is hashed and salted before storing in the database and it is not displayed on UI. Users may have permissions and we can assign or remove them from each user. A permission consists of code and description fields.
