@@ -29,6 +29,8 @@ Permissions:
 - Express
 - MongoDB
 - Mongoose
+- Yup
+- Winston
 
 #### Frontend:
 
