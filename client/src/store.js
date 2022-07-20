@@ -6,7 +6,6 @@ const initialState = {
   selectedUser: "",
   userPermissions: [],
   sort: "",
-  page: "",
   filter: "",
 };
 
@@ -16,7 +15,6 @@ let store = (set) => ({
   setSelectedUser: (userId) => set(() => ({ selectedUser: userId })),
   setUserPermissions: (permissions) =>
     set(() => ({ userPermissions: permissions })),
-  setPage: (page) => set(() => ({ page })),
   setSort: (sort) => set(() => ({ sort })),
   setFilter: (filter) => set(() => ({ filter })),
   reset: () => set(initialState),

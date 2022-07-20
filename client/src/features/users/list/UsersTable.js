@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useStore } from "store";
 import useUsers from "./useUsers";
 
@@ -6,8 +7,7 @@ import { Pagination } from "components/Pagination/Pagination.styles";
 import Table from "components/Table";
 
 const UsersTable = () => {
-  const page = useStore((state) => state.page);
-  const setPage = useStore((state) => state.setPage);
+  const [page, setPage] = useState("");
   const sort = useStore((state) => state.sort);
   const filter = useStore((state) => state.filter);
 

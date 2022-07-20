@@ -27,7 +27,7 @@ const Filters = () => {
         value={filterBy}
         onChange={(e) => setFilterBy(e.target.value)}
       >
-        <option value="">No Filter</option>
+        <option value="">Choose Filter</option>
         <option value="firstName">First name</option>
         <option value="lastName">Last name</option>
         <option value="username">Username</option>
