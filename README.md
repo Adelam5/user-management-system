@@ -48,4 +48,5 @@ Permissions:
 4. Start server `npm start` (from server folder), start client `npm start` (from client folder)
 5. Open `http://localhost:3000` to view application in the browser.
 
-### Backend API Postman documentation with examples: https://documenter.getpostman.com/view/21593150/UzQyqNmn
+### Backend API Postman documentation with examples: 
+https://documenter.getpostman.com/view/21593150/UzQyqNmn
