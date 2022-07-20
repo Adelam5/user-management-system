@@ -10,11 +10,13 @@ const Filters = () => {
   const [input, setInput] = useState("");
   const [filterBy, setFilterBy] = useState("");
   const setFilter = useStore((state) => state.setFilter);
+  const setPage = useStore((state) => state.setPage);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (filterBy && input) {
       setFilter(`${filterBy}=${input}`);
+      setPage(1);
     } else {
       setFilter("");
     }
