@@ -15,7 +15,7 @@ import Button from "components/Button";
 import InputControl from "components/Form/InputControl";
 import SelectControl from "components/Form/SelectControl";
 
-const NewUser = () => {
+const NewUserForm = () => {
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -95,4 +95,4 @@ const NewUser = () => {
   );
 };
 
-export default NewUser;
+export default NewUserForm;

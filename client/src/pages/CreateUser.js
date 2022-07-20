@@ -1,12 +1,12 @@
 import { Title } from "assets/styles/GlobalStyles";
 
-import NewUser from "features/users/new/NewUser";
+import NewUserForm from "features/users/new/NewUserForm";
 
 const CreateUser = () => {
   return (
     <div>
       <Title>Create User</Title>
-      <NewUser />
+      <NewUserForm />
     </div>
   );
 };
