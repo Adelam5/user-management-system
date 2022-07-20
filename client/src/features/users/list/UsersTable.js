@@ -7,7 +7,7 @@ import { Pagination } from "components/Pagination/Pagination.styles";
 import Table from "components/Table";
 
 const UsersTable = () => {
-  const [page, setPage] = useState("");
+  const [page, setPage] = useState(1);
   const sort = useStore((state) => state.sort);
   const filter = useStore((state) => state.filter);
 
@@ -23,7 +23,7 @@ const UsersTable = () => {
       <Pagination
         previousLabel={"<<"}
         nextLabel={">>"}
-        pageCount={data?.pagination.totalPages || 0}
+        pageCount={data?.pagination?.totalPages || 1}
         marginPagesDisplayed={3}
         forcePage={page - 1}
         onPageChange={handlePageChange}
