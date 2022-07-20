@@ -1,35 +1,32 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Field, Formik } from "formik";
 
-import { userEditSchema } from "./user.validation";
-import { useUpdateUser } from "./hooks";
+import { userSchema } from "../user.validation";
+import useNewUser from "./useNewUser";
 
 import {
   FormContainer,
   ErrorMessage,
-  SimpleForm,
+  StyledForm,
 } from "components/Form/Form.styles";
 import { Buttons } from "components/Button/Button.styles";
 
 import Button from "components/Button";
 import InputControl from "components/Form/InputControl";
-import { Spinner } from "components/Spinner";
 import SelectControl from "components/Form/SelectControl";
-import useUser from "./hooks/useUser";
+import { Spinner } from "components/Spinner";
 
-const EditForm = () => {
-  const { id } = useParams();
-
-  const { data: user } = useUser(id);
-
+const NewUser = () => {
   const initialValues = {
-    firstName: user?.firstName || "",
-    lastName: user?.lastName || "",
-    email: user?.email || "",
-    status: user?.status || "offline",
+    firstName: "",
+    lastName: "",
+    username: "",
+    password: "",
+    email: "",
+    status: "offline",
   };
 
-  const { mutate: edit, error, isLoading } = useUpdateUser();
+  const { mutate: add, error, isLoading } = useNewUser();
 
   if (isLoading) {
     return <Spinner />;
@@ -37,24 +34,21 @@ const EditForm = () => {
 
   const onSubmit = (values) => {
     console.log(values);
-    const edited = {
-      id: user._id,
-      data: values,
-    };
-    edit(edited);
+
+    add(values);
   };
 
   return (
     <FormContainer>
       <Formik
         initialValues={initialValues}
-        validationSchema={userEditSchema}
+        validationSchema={userSchema}
         onSubmit={onSubmit}
         enableReinitialize
       >
         {() => (
-          <SimpleForm>
-            <h1>Edit User</h1>
+          <StyledForm>
+            <h1>New User</h1>
             <Field
               variant="block"
               label="First name:"
@@ -65,6 +59,19 @@ const EditForm = () => {
               variant="block"
               label="Last name:"
               name="lastName"
+              component={InputControl}
+            />
+            <Field
+              variant="block"
+              label="Username:"
+              name="username"
+              component={InputControl}
+            />
+            <Field
+              variant="block"
+              label="Password:"
+              name="password"
+              type="password"
               component={InputControl}
             />
             <Field
@@ -89,11 +96,11 @@ const EditForm = () => {
               <Button as={Link} to={-1} variant="secondary" label="Cancel" />
             </Buttons>
             {error && <ErrorMessage>{error.response.data.error}</ErrorMessage>}
-          </SimpleForm>
+          </StyledForm>
         )}
       </Formik>
     </FormContainer>
   );
 };
 
-export default EditForm;
+export default NewUser;

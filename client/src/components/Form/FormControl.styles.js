@@ -12,21 +12,6 @@ export const FormControl = styled.div`
   }
 `;
 
-export const TAFormControl = styled.div`
-  height: 260px;
-
-  > div {
-    display: flex;
-  }
-
-  @media screen and (max-width: 690px) {
-    width: 100%;
-    > div {
-      display: block;
-    }
-  }
-`;
-
 export const Input = styled.input`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.white};
@@ -69,26 +54,6 @@ export const ErrorText = styled.p`
   margin-top: 0.2rem;
   @media screen and (max-width: 690px) {
     margin-left: 10px;
-  }
-`;
-
-export const TextArea = styled.textarea`
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.white};
-  width: calc(100% - 100px);
-  height: 230px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  resize: none;
-  &::placeholder {
-    font-size: 1.2rem;
-  }
-  @media screen and (max-width: 690px) {
-    width: 95%;
-    margin-left: 0;
   }
 `;
 

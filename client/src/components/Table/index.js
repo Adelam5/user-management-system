@@ -4,6 +4,7 @@ import { useStore } from "store";
 
 import { FaUserEdit, FaTrashAlt, FaPlus } from "assets/icons";
 import { Action, TableWrapper, Th } from "./Table.styles";
+
 import TableHeadCell from "./TableHeadCell";
 
 const Table = ({ data }) => {

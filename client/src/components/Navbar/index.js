@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { FaUsers, HiMenu, FaTimes, MdPersonAdd } from "assets/icons";
-
 import {
   StyledNavbar,
   Container,
@@ -10,10 +10,8 @@ import {
   MobileIcon,
 } from "./Navbar.styles";
 
-import Button from "components/Button";
-
-import { Link } from "react-router-dom";
 import NavigationLinks from "./NavigationLinks";
+import Button from "components/Button";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);

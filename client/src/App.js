@@ -9,9 +9,8 @@ import GlobalStyles, {
 
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
-
 import Modal from "components/Modal";
-import ConfirmDelete from "features/users/ConfirmDelete";
+import ConfirmDelete from "features/users/delete/ConfirmDelete";
 import UsersList from "pages/UsersList";
 import CreateUser from "pages/CreateUser";
 import EditUser from "pages/EditUser";
@@ -23,11 +22,13 @@ function App() {
   return (
     <>
       <GlobalStyles />
+
       {showModal && (
-        <Modal title="Confirmation">
+        <Modal title="Delete user">
           <ConfirmDelete />
         </Modal>
       )}
+
       <Navbar />
       <MainWrapper>
         <MainContainer>

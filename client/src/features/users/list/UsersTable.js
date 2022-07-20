@@ -1,8 +1,10 @@
 import { useStore } from "store";
-import useUsers from "./hooks/useUsers";
-import Table from "components/Table";
-import { Spinner } from "components/Spinner";
+import useUsers from "./useUsers";
+
 import { Pagination } from "components/Pagination/Pagination.styles";
+
+import Table from "components/Table";
+import Filters from "./Filters";
 
 const UsersTable = () => {
   const page = useStore((state) => state.page);
@@ -14,23 +16,18 @@ const UsersTable = () => {
 
   console.log(`?page=${page}&sort=${sort}&${filter}`);
 
-  const headers = ["First name", "Last name", "Username", "Email", "Status"];
-
   const handlePageChange = (data) => {
     setPage(data.selected + 1);
   };
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div>
-      <Table headers={headers} data={data.data} />
+      <Filters />
+      <Table data={data?.data} />
       <Pagination
         previousLabel={"<<"}
         nextLabel={">>"}
-        pageCount={data.pagination.totalPages}
+        pageCount={data?.pagination.totalPages}
         marginPagesDisplayed={3}
         forcePage={page - 1}
         onPageChange={handlePageChange}

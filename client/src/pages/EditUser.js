@@ -1,9 +1,11 @@
-import EditForm from "features/users/EditForm";
+import { Title } from "assets/styles/GlobalStyles";
+
+import EditForm from "features/users/edit/EditForm";
 
 const EditUser = () => {
   return (
     <div>
-      EDIT USER
+      <Title>Edit User</Title>
       <EditForm />
     </div>
   );

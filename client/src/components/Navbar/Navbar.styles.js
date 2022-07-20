@@ -30,9 +30,16 @@ export const Brand = styled(Link)`
   }
 
   & > span {
-    font-size: 30px;
+    font-size: 2em;
+  }
+
+  @media screen and (max-width: 520px) {
+    & > span {
+      font-size: 1em;
+    }
   }
 `;
+
 export const Links = styled.div`
   display: none;
   @media screen and (max-width: 760px) {

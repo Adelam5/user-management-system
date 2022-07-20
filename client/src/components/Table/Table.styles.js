@@ -53,10 +53,6 @@ export const Action = styled.div`
   }
 `;
 
-export const Buttons = styled.div`
-  display: flex;
-`;
-
 export const Th = styled.th`
   & > div {
     display: flex;

@@ -6,11 +6,7 @@ import {
   FaTrashAlt,
   FaPlus,
 } from "react-icons/fa";
-import {
-  TiDocumentAdd,
-  TiArrowSortedDown,
-  TiArrowSortedUp,
-} from "react-icons/ti";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { MdPersonAdd } from "react-icons/md";
 
 export {
@@ -21,7 +17,6 @@ export {
   FaUserEdit,
   MdPersonAdd,
   FaPlus,
-  TiDocumentAdd,
   TiArrowSortedDown,
   TiArrowSortedUp,
   FaTrashAlt,

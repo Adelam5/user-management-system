@@ -36,7 +36,7 @@ export const MainContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  // margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
   color: ${({ theme }) => theme.colors.secondary};
 `;

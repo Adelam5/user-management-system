@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useStore } from "store";
 
 import Button from "components/Button";
-import useDeleteUser from "./hooks/useDeleteUser";
+import useDeleteUser from "./useDeleteUser";
 import { Buttons } from "components/Button/Button.styles";
 
 const ConfirmDelete = () => {
@@ -24,7 +24,7 @@ const ConfirmDelete = () => {
         />
         <Button
           as={Link}
-          to={-1}
+          to="/"
           onClick={() => setShowModal(false)}
           variant="secondary"
           label="Cancel"

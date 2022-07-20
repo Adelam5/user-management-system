@@ -34,16 +34,15 @@ export const StyledModal = styled.div`
     font-size: 1.1rem;
     height: 180px;
     padding: 20px;
-    white-space: wrap;
-    overflow-y: auto;
-    text-overflow: ellipsis;
   }
+
   .close {
     color: #888;
     float: right;
     font-size: 2em;
     font-weight: bold;
   }
+
   .close:hover,
   .close:focus {
     color: black;

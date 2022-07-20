@@ -1,9 +1,11 @@
-import NewUser from "features/users/NewUser";
+import { Title } from "assets/styles/GlobalStyles";
+
+import NewUser from "features/users/new/NewUser";
 
 const CreateUser = () => {
   return (
     <div>
-      CREATE USER
+      <Title>Create User</Title>
       <NewUser />
     </div>
   );

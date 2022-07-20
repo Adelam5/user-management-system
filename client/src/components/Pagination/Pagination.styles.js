@@ -1,13 +1,6 @@
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 
-export const StyledPagination = styled.div`
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 export const Pagination = styled(ReactPaginate)`
   list-style: none;
   padding: 2rem;

@@ -5,16 +5,15 @@ const StyledButton = styled.button`
   color: ${({ theme, variant }) =>
     variant === "secondary" ? theme.colors.dark : theme.colors.white};
   border: none;
-  border-radius: 9px;
-  padding: 8px 14px;
-  margin: 4px;
+  border-radius: 3px;
+  padding: 6px 12px;
   cursor: ${({ disabled }) => (disabled ? "normal" : "pointer")};
   opacity: ${({ disabled }) => (disabled ? "0.7" : "1")};
   transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   &:hover {
     transform: scale(1.1);
