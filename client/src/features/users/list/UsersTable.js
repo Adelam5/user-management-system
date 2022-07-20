@@ -23,7 +23,7 @@ const UsersTable = () => {
       <Pagination
         previousLabel={"<<"}
         nextLabel={">>"}
-        pageCount={data?.pagination.totalPages}
+        pageCount={data?.pagination.totalPages || 0}
         marginPagesDisplayed={3}
         forcePage={page - 1}
         onPageChange={handlePageChange}

@@ -4,6 +4,11 @@ export const List = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 12px;
+
+  & > div {
+    margin: 2rem 0;
+    line-height: 2rem;
+  }
 `;
 
 // Custom checkbox with label

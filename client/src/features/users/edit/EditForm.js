@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Field, Formik } from "formik";
 
-import { userEditSchema } from "../user.validation";
+import { userEditSchema } from "./user.validation";
 
 import useUpdateUser from "./useUpdateUser";
 import useUser from "../useUser";
