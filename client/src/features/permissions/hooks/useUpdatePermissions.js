@@ -1,9 +1,12 @@
-import { useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const updatePermission = async (permission) => {
-  const { data } = await axios.put(`/api/users/${permission.userId}/permissions`, permission.data);
+  const { data } = await axios.put(
+    `/api/users/${permission.userId}/permissions`,
+    permission.data
+  );
   return data;
 };
 

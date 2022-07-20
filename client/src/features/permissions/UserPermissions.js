@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 
 import { useStore } from "store";
-import useUser from "features/users/useUser";
 import usePermissions from "./hooks/usePermissions";
 import useUpdatePermission from "./hooks/useUpdatePermissions";
 
@@ -14,13 +13,12 @@ const UserPermissions = () => {
   const setUserPermissions = useStore((state) => state.setUserPermissions);
 
   const { id } = useParams();
-  const { data: user } = useUser(id);
   const { data: permissions } = usePermissions();
   const { mutate: updateUserPermissions } = useUpdatePermission();
 
   const handleChange = (e, permission) => {
     if (userPermissions.includes(permission._id)) {
-      setUserPermissions(userPermissions.filter((p) => p != permission._id));
+      setUserPermissions(userPermissions.filter((p) => p !== permission._id));
     } else {
       setUserPermissions([...userPermissions, permission._id]);
     }

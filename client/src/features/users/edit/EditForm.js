@@ -54,7 +54,6 @@ const EditForm = () => {
       >
         {() => (
           <StyledForm>
-            <h1>Edit User</h1>
             <Field
               variant="block"
               label="First name:"

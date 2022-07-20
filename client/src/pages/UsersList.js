@@ -1,11 +1,11 @@
 import { Title } from "assets/styles/GlobalStyles";
-
-import UsersTable from "features/users/list/UsersTable";
+import { Filters, UsersTable } from "features/users/list";
 
 const UsersList = () => {
   return (
     <div>
       <Title>User List</Title>
+      <Filters />
       <UsersTable />
     </div>
   );

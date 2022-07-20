@@ -4,7 +4,6 @@ import useUsers from "./useUsers";
 import { Pagination } from "components/Pagination/Pagination.styles";
 
 import Table from "components/Table";
-import Filters from "./Filters";
 
 const UsersTable = () => {
   const page = useStore((state) => state.page);
@@ -12,9 +11,7 @@ const UsersTable = () => {
   const sort = useStore((state) => state.sort);
   const filter = useStore((state) => state.filter);
 
-  const { data, isLoading } = useUsers(`?page=${page}&sort=${sort}&${filter}`);
-
-  console.log(`?page=${page}&sort=${sort}&${filter}`);
+  const { data } = useUsers(`?page=${page}&sort=${sort}&${filter}`);
 
   const handlePageChange = (data) => {
     setPage(data.selected + 1);
@@ -22,7 +19,6 @@ const UsersTable = () => {
 
   return (
     <div>
-      <Filters />
       <Table data={data?.data} />
       <Pagination
         previousLabel={"<<"}

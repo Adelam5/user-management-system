@@ -14,7 +14,6 @@ import { Buttons } from "components/Button/Button.styles";
 import Button from "components/Button";
 import InputControl from "components/Form/InputControl";
 import SelectControl from "components/Form/SelectControl";
-import { Spinner } from "components/Spinner";
 
 const NewUser = () => {
   const initialValues = {
@@ -26,15 +25,9 @@ const NewUser = () => {
     status: "offline",
   };
 
-  const { mutate: add, error, isLoading } = useNewUser();
-
-  if (isLoading) {
-    return <Spinner />;
-  }
+  const { mutate: add, error } = useNewUser();
 
   const onSubmit = (values) => {
-    console.log(values);
-
     add(values);
   };
 
@@ -48,7 +41,6 @@ const NewUser = () => {
       >
         {() => (
           <StyledForm>
-            <h1>New User</h1>
             <Field
               variant="block"
               label="First name:"
