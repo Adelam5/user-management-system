@@ -10,25 +10,30 @@ export const StyledModal = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
+
   & > div {
-    padding: 0 50px 20px;
-    border: 1px solid #888;
     border-radius: 5px;
-    background-color: #efefef;
-    width: 80%;
-    height: 570px;
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.secondary};
+    width: 350px;
+    height: 225px;
   }
   .modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #888;
-    padding-top: 10px;
+    padding: 10px;
   }
   .modal-body {
-    font-size: 1.2em;
-    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.1rem;
+    height: 180px;
+    padding: 20px;
     white-space: wrap;
     overflow-y: auto;
     text-overflow: ellipsis;

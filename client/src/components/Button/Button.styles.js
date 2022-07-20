@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  font-size: 1.1rem;
 
   &:hover {
     transform: scale(1.1);
@@ -23,7 +24,8 @@ const StyledButton = styled.button`
 export const Buttons = styled.div`
   display: flex;
   margin-left: 100px;
-  justify-content: space-between;
+  justify-content: end;
+  gap: 0.6rem;
 `;
 
 export default StyledButton;

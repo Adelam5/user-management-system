@@ -24,7 +24,7 @@ function App() {
     <>
       <GlobalStyles />
       {showModal && (
-        <Modal title="Sure?">
+        <Modal title="Confirmation">
           <ConfirmDelete />
         </Modal>
       )}
