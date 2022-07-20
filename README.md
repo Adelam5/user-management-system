@@ -8,7 +8,7 @@ User Management System is a full MERN stack web application. The main goal is to
 
 Status: Online, Away or Offline
 
-Permissions:
+Permissions are hard-coded in database:
 
 - Code: 1 - Description: Read
 - Code: 2 - Description: Write
