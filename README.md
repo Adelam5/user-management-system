@@ -10,7 +10,7 @@ https://master--classy-crumble-9c22d3.netlify.app/
 
 ### Project Description
 
-User Management System is a full MERN stack web application. The main goal is to display the list of all users from the database. It allows us to filter and order users, add new users, and edit and delete existing ones. We can filter users by using form on the User List page and we can order users (descending or ascending) by clickng on the arrows by the field names in the head of the table. Every user must have: first name, last name, username, email, status and password. Password field is hashed and salted before storing in the database and it is not displayed on UI. Users may have permissions and we can assign or remove them from each user. A permission consists of code and description fields.
+User Management System is a full MERN stack web application. The main goal is to display the list of all users from the database. It allows us to filter and order users, add new users, and edit and delete existing ones. We can filter users by using the form on the User List page and we can order users (descending or ascending) by clicking on the arrows by the field names in the head of the table. Every user must have: first name, last name, username, email, status and password. Password field is hashed and salted before storing in the database and I have decided not to display it on the UI, but it can be easily changed. Users may have permissions and we can assign or remove them from each user. A permission consists of code and description fields.
 
 Status: Online, Away or Offline
 
@@ -23,9 +23,11 @@ Permissions are hard-coded in database:
 
 ### Project Features
 
-- List, filter and order users
+- List all users from the database
+- Filter users by any of its attributes - filter must be exaxt match
+- Order users (descending or ascending) by any of its attributes
 - Result is paginated (10 users per page)
-- Create, edit, update or delete user
+- User's CRUD functionality
 - Add or remove permissions for the selected user
 - Pagination
 
@@ -43,12 +45,13 @@ Permissions are hard-coded in database:
 #### Frontend:
 
 - ReactJS
-- React-query
+- React-Router-Dom
+- React-Query
 - Axios
 - Formik
 - Yup
 - Zustand
-- Styled-components
+- Styled-Components
 
 ### To get a local copy up and running follow these simple steps:
 
