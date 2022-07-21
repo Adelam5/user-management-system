@@ -62,4 +62,4 @@ Permissions are hard-coded in database:
 5. Open `http://localhost:3000` to view application in the browser.
 
 ### Backend API Postman documentation with examples: 
-https://documenter.getpostman.com/view/21593150/UzQyqNmn
+https://documenter.getpostman.com/view/21593150/UzR1K32Z
